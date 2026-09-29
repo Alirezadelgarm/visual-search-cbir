@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local datasets and generated artifacts
+data/
+artifacts/*.joblib
+artifacts/*.pkl
+*.joblib
+*.pkl
+
+# Logs and temporary files
+*.log
+*.tmp

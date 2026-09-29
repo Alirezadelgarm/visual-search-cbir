@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "visual-search-cbir"
+version = "1.0.0"
+description = "Portfolio-ready content-based image retrieval using SIFT, Harris, Bag of Visual Words, cosine similarity, and Rocchio relevance feedback."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = {text = "MIT"}
+authors = [{name = "Alireza Delgarm"}]
+dependencies = [
+  "joblib>=1.4,<2.0",
+  "numpy>=1.26,<3.0",
+  "opencv-python-headless>=4.9,<5.0",
+  "pillow>=10,<13",
+  "scikit-learn>=1.6,<2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<10",
+  "ruff>=0.8,<1.0",
+]
+
+[project.scripts]
+visual-search = "visual_search_cbir.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "UP", "B"]
+ignore = ["E501"]
